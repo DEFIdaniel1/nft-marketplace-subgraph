@@ -1,0 +1,34 @@
+# Basically building out 'tables' for data
+
+type ActiveItem @entity {
+  id: ID! #! means it MUST exist
+  buyer: Bytes! #address 0x0.. if not purchased
+  seller: Bytes!
+  nftAddress: Bytes!
+  tokenId: BigInt!
+  price: BigInt
+}
+
+type NFTListed @entity {
+  id: ID!
+  seller: Bytes!
+  nftAddress: Bytes!
+  tokenId: BigInt!
+  price: BigInt
+}
+
+type ListingCancelled @entity {
+  id: ID!
+  seller: Bytes!
+  nftAddress: Bytes!
+  tokenId: BigInt!
+  price: BigInt
+}
+
+type NFTPurchased @entity {
+  id: ID!
+  buyer: Bytes!
+  nftAddress: Bytes!
+  tokenId: BigInt!
+  price: BigInt
+}
