@@ -44,6 +44,10 @@ export function handleNFTListed(event: NFTListedEvent): void {
   nftListed.nftAddress = event.params.nftAddress;
   activeItem.nftAddress = event.params.nftAddress;
 
+  activeItem.buyer = Address.fromString(
+    "0x0000000000000000000000000000000000000000"
+  );
+
   nftListed.save();
   activeItem.save();
 }
